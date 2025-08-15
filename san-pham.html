@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trạm Pet - Sản phẩm</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- Decor bốn góc + hai bên -->
+<div class="page-decor top-left"><img src="img/decor-paw1.png" alt=""></div>
+<div class="page-decor top-right"><img src="img/decor-dog.png" alt=""></div>
+<div class="page-decor bottom-left"><img src="img/decor-cat.png" alt=""></div>
+<div class="page-decor bottom-right"><img src="img/decor-paw2.png" alt=""></div>
+
+<!-- Decor hai bên giữa màn hình -->
+<div class="page-decor mid-left"><img src="img/decor-fishbone.png" alt=""></div>
+<div class="page-decor mid-right"><img src="img/decor-bone.png" alt=""></div>
+
+<header class="header">
+  <a href="index.html" class="logo"><i class="fas fa-paw"></i> Trạm Pet</a>
+
+  <nav class="navbar">
+    <a href="index.html">Trang Chủ</a>
+    <a href="gioi-thieu.html">Giới Thiệu</a>
+    <!-- MỤC SẢN PHẨM CÓ DROPDOWN -->
+<div class="nav-item has-dd">
+  <a href="san-pham.html" class="dd-toggle" aria-haspopup="true" aria-expanded="false">
+    Sản Phẩm <i class="fas fa-chevron-down" aria-hidden="true" style="font-size:1.2rem;margin-left:.4rem"></i>
+  </a>
+  <div class="dropdown" role="menu">
+    <a href="san-pham.html?cat=clothes"   role="menuitem">Quần áo thú cưng</a>
+    <a href="san-pham.html?cat=accessory" role="menuitem">Phụ kiện thú cưng</a>
+    <a href="san-pham.html?cat=food"      role="menuitem">Thức ăn thú cưng</a>
+    <a href="san-pham.html?cat=hygiene"   role="menuitem">Vệ sinh thú cưng</a>
+    <a href="san-pham.html?cat=health"    role="menuitem">Sức khỏe thú cưng</a>
+    <a href="san-pham.html?cat=beauty"    role="menuitem">Làm đẹp thú cưng</a>
+  </div>
+</div>
+
+    <a href="dich-vu.html">Dịch Vụ</a>
+    <a href="goi-dich-vu.html">Gói Dịch Vụ</a>
+    <a href="lien-he.html">Liên Hệ</a>
+  </nav>
+
+  <form class="search-bar" id="global-search" role="search">
+    <input type="search" id="search-input" placeholder="Tìm sản phẩm..." aria-label="Từ khoá" />
+    <button type="submit" aria-label="Tìm kiếm"><i class="fas fa-search"></i></button>
+  </form>
+
+  <div class="icons">
+    <i class="fas fa-bars menu-btn" id="menu-btn"></i>
+    <a href="yeu-thich.html" class="fas fa-heart">
+      <span id="wish-count" class="cart-count">0</span>
+    </a>
+    <a href="cart.html" class="fas fa-shopping-cart">
+      <span id="cart-count" class="cart-count">0</span>
+    </a>
+    <div class="fas fa-user" id="login-btn"></div>
+  </div>
+
+  <form action="" class="login-form">
+    <h3>Đăng nhập</h3>
+    <input type="email" placeholder="Đăng nhập email của bạn" class="box"/>
+    <input type="password" placeholder="Đăng nhập mật khẩu của bạn" class="box"/>
+    <div class="remember">
+      <input type="checkbox" id="remember-me"/>
+      <label for="remember-me">Nhớ mật khẩu</label>
+    </div>
+    <input type="submit" value="Đăng Nhập" class="btn"/>
+    <a href="#" class="btn check-btn">Kiểm tra</a>
+    <div class="links">
+      <a href="#">Quên mật khẩu</a>
+      <a href="#">Đăng ký</a>
+    </div>
+  </form>
+</header>
+
+<section class="heading" style="margin-top:2rem;">Sản Phẩm</section>
+
+<section class="products-layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h3>Danh mục sản phẩm</h3>
+    <nav class="cat-list">
+      <a href="san-pham.html?cat=beauty">Làm đẹp thú cưng</a>
+      <a href="san-pham.html?cat=accessory">Phụ kiện thú cưng</a>
+      <a href="san-pham.html?cat=clothes">Quần áo thú cưng</a>
+      <a href="san-pham.html?cat=health">Sức khoẻ thú cưng</a>
+      <a href="san-pham.html?cat=food">Thức ăn thú cưng</a>
+      <a href="san-pham.html?cat=hygiene">Vệ sinh thú cưng</a>
+      <a href="san-pham.html?cat=all">Tất cả sản phẩm</a>
+    </nav>
+
+    <h3 style="margin-top:1.6rem;">Tìm kiếm sản phẩm</h3>
+    <form class="sidebar-search" onsubmit="event.preventDefault(); document.querySelector('#search-input').value=this.q.value; document.querySelector('#global-search').dispatchEvent(new Event('submit'));">
+      <input type="search" name="q" placeholder="Tìm kiếm...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </aside>
+
+  <!-- MAIN GRID -->
+  <div class="shop">
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <span id="count-label">Hiển thị tất cả sản phẩm</span>
+      </div>
+      <div class="toolbar-right">
+        <label for="sort">Sắp xếp:</label>
+        <select id="sort">
+          <option value="default">Mặc định</option>
+          <option value="price_asc">Giá: thấp → cao</option>
+          <option value="price_desc">Giá: cao → thấp</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="box-container" id="product-grid">
+      <!-- GẮN data-cat + sửa data-img = img/... -->
+
+      <!-- FOOD -->
+      <div class="box" data-name="Royal Canin Puppy 2kg" data-cat="food">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="rc-dog-junior-2kg" data-name="Royal Canin Puppy 2kg"
+             data-price="385000" data-img="img/royal canin puppy.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/royal canin puppy.jpg" alt="Royal Canin Puppy 2kg"></div>
+        <div class="content"><h3>Royal Canin Puppy 2kg</h3><div class="amount">385,000₫</div></div>
+      </div>
+
+      <div class="box" data-name="Royal Canin Indoor 2kg" data-cat="food">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="rc-cat-indoor-2kg" data-name="Royal Canin Indoor 2kg"
+             data-price="435000" data-img="img/Royal Canin Indoor 2kg.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/Royal Canin Indoor 2kg.jpg" alt="Royal Canin Indoor 2kg"></div>
+        <div class="content"><h3>Royal Canin Indoor 2kg</h3><div class="amount">435,000₫</div></div>
+      </div>
+
+      <div class="box" data-name="Pedigree Adult 3kg" data-cat="food">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="pedigree-3kg" data-name="Pedigree Adult 3kg"
+             data-price="295000" data-img="img/Pedigree Adult 3kg.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/Pedigree Adult 3kg.jpg" alt="Pedigree Adult 3kg"></div>
+        <div class="content"><h3>Pedigree Adult 3kg</h3><div class="amount">295,000₫</div></div>
+      </div>
+
+      <div class="box" data-name="Whiskas Cá ngừ 1.2kg" data-cat="food">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="whiskas-tuna-1_2kg" data-name="Whiskas Cá ngừ 1.2kg"
+             data-price="165000" data-img="img/Whiskas Cá ngừ 1.2kg.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/Whiskas Cá ngừ 1.2kg.jpg" alt="Whiskas Cá ngừ 1.2kg"></div>
+        <div class="content"><h3>Whiskas Cá ngừ 1.2kg</h3><div class="amount">165,000₫</div></div>
+      </div>
+
+      <!-- HYGIENE -->
+      <div class="box" data-name="Cát vệ sinh Catsan 10L" data-cat="hygiene">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="catsan-10l" data-name="Cát vệ sinh Catsan 10L"
+             data-price="179000" data-img="img/Cát vệ sinh Catsan 10L.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/Cát vệ sinh Catsan 10L.jpg" alt="Catsan 10L"></div>
+        <div class="content"><h3>Cát vệ sinh Catsan 10L</h3><div class="amount">179,000₫</div></div>
+      </div>
+
+      <div class="box" data-name="Cát vệ sinh Kit Cat 10L" data-cat="hygiene">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="kit-cat-10l" data-name="Cát vệ sinh Kit Cat 10L"
+             data-price="189000" data-img="img/Cát vệ sinh Kit Cat 10L.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/Cát vệ sinh Kit Cat 10L.jpg" alt="Kit Cat 10L"></div>
+        <div class="content"><h3>Cát vệ sinh Kit Cat 10L</h3><div class="amount">189,000₫</div></div>
+      </div>
+
+      <!-- ACCESSORY -->
+      <div class="box" data-name="Bộ bàn chải răng thú cưng" data-cat="accessory">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="toothbrush-set" data-name="Bộ bàn chải răng thú cưng"
+             data-price="59000" data-img="img/Bộ bàn chải răng thú cưng.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/Bộ bàn chải răng thú cưng.jpg" alt="Bộ bàn chải răng thú cưng"></div>
+        <div class="content"><h3>Bộ bàn chải răng thú cưng</h3><div class="amount">59,000₫</div></div>
+      </div>
+
+      <div class="box" data-name="Dây dắt nylon 1.5m" data-cat="accessory">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="leash-nylon-1_5m" data-name="Dây dắt nylon 1.5m"
+             data-price="99000" data-img="img/Dây dắt nylon 1.5m.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/Dây dắt nylon 1.5m.jpg" alt="Dây dắt nylon 1.5m"></div>
+        <div class="content"><h3>Dây dắt nylon 1.5m</h3><div class="amount">99,000₫</div></div>
+      </div>
+
+      <div class="box" data-name="Vòng cổ da size M" data-cat="accessory">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="collar-leather-m" data-name="Vòng cổ da size M"
+             data-price="129000" data-img="img/Vòng cổ da size M.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/Vòng cổ da size M.jpg" alt="Vòng cổ da size M"></div>
+        <div class="content"><h3>Vòng cổ da size M</h3><div class="amount">129,000₫</div></div>
+      </div>
+
+      <div class="box" data-name="KONG Classic M" data-cat="accessory">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="kong-classic-m" data-name="Đồ chơi KONG Classic M"
+             data-price="249000" data-img="img/Đồ chơi KONG Classic M.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/Đồ chơi KONG Classic M.jpg" alt="KONG Classic M"></div>
+        <div class="content"><h3>Đồ chơi KONG Classic M</h3><div class="amount">249,000₫</div></div>
+      </div>
+
+      <!-- BEAUTY -->
+      <div class="box" data-name="Sữa tắm nha đam 500ml" data-cat="beauty">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="shampoo-aloevera" data-name="Sữa tắm nha đam 500ml"
+             data-price="129000" data-img="img/Sữa tắm nha đam 500ml.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/Sữa tắm nha đam 500ml.jpg" alt="Sữa tắm nha đam 500ml"></div>
+        <div class="content"><h3>Sữa tắm nha đam 500ml</h3><div class="amount">129,000₫</div></div>
+      </div>
+
+      <!-- WATER/ACCESSORY -->
+      <div class="box" data-name="Bình nước tuần hoàn 2.5L" data-cat="accessory">
+        <div class="icons">
+          <a href="#" class="fas fa-shopping-cart add-to-cart"
+             data-id="water-fountain" data-name="Bình nước tuần hoàn 2.5L"
+             data-price="499000" data-img="img/Bình nước tuần hoàn 2.5L.jpg" data-qty="1"></a>
+          <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="image"><img src="img/Bình nước tuần hoàn 2.5L.jpg" alt="Bình nước tuần hoàn 2.5L"></div>
+        <div class="content"><h3>Bình nước tuần hoàn 2.5L</h3><div class="amount">499,000₫</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="f-grid">
+      <!-- Cột 1: thương hiệu -->
+      <div class="f-col f-brand">
+        <a href="index.html" class="f-logo"><i class="fas fa-paw"></i> Trạm Pet</a>
+        <p>Chăm sóc thú cưng tận tâm – sản phẩm chính hãng, dịch vụ chu đáo.</p>
+        <form class="f-newsletter" id="newsletter-form">
+          <input type="email" name="email" placeholder="Nhập email để nhận ưu đãi" aria-label="Email nhận tin" required>
+          <button type="submit" class="btn">Đăng ký</button>
+        </form>
+      </div>
+
+      <!-- Cột 2: liên kết sản phẩm -->
+      <div class="f-col">
+        <h4>Sản phẩm</h4>
+        <ul class="f-links">
+          <li><a href="san-pham.html?cat=food">Thức ăn thú cưng</a></li>
+          <li><a href="san-pham.html?cat=accessory">Phụ kiện</a></li>
+          <li><a href="san-pham.html?cat=hygiene">Vệ sinh</a></li>
+          <li><a href="san-pham.html?cat=beauty">Làm đẹp</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 3: dịch vụ -->
+      <div class="f-col">
+        <h4>Dịch vụ</h4>
+        <ul class="f-links">
+          <li><a href="dich-vu.html">Grooming & Spa</a></li>
+          <li><a href="goi-dich-vu.html">Gói dịch vụ</a></li>
+          <li><a href="dich-vu.html#vaccine">Tiêm phòng</a></li>
+          <li><a href="dich-vu.html#hotel">Khách sạn thú cưng</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 4: liên hệ & MXH -->
+      <div class="f-col">
+        <h4>Liên hệ</h4>
+        <ul class="f-contact">
+          <li><i class="fas fa-map-marker-alt"></i> 123 Đường Trạm Pet, HCM</li>
+          <li><i class="fas fa-phone"></i> 0123 456 789</li>
+          <li><i class="fas fa-envelope"></i> support@trampet.vn</li>
+        </ul>
+        <div class="f-social">
+          <a href="#" aria-label="Facebook" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Tiktok" class="social-btn"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="Youtube" class="social-btn"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="f-bottom">
+      <div>© <span id="year"></span> Trạm Pet. All rights reserved.</div>
+      <div class="f-bottom-links">
+        <a href="gioi-thieu.html">Giới thiệu</a>
+        <a href="lien-he.html">Liên hệ</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#policy">Chính sách</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/style.js"></script>
+</body>
+</html>
